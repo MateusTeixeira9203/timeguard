@@ -1,0 +1,16 @@
+
+services:
+  db:
+    image: postgres:16
+    container_name: timeguard_db
+    environment:
+      POSTGRES_USER: timeguard
+      POSTGRES_PASSWORD: timeguard123
+      POSTGRES_DB: timeguard
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_timeguard:/var/lib/postgresql/data
+
+volumes:
+  pgdata_timeguard:
